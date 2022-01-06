@@ -37,4 +37,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.navbar-wrapper{
+  height: 8vh;
+  background: aquamarine;
+}
+</style>

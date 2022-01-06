@@ -1,7 +1,9 @@
 <template>
   <div class="main-layout">
     <Navbar />
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
     <Footer />
   </div>
 </template>
@@ -22,4 +24,14 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.main-layout{
+  width: 100vw;
+
+  .content {
+    width: 100%;
+    min-height: 84vh;
+    height: 1px;
+  }
+}
+</style>

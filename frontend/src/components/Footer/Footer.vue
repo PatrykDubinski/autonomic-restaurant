@@ -14,4 +14,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.footer{
+  height: 8vh;
+  background: aqua;
+}
+</style>

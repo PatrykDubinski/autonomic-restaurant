@@ -1,6 +1,7 @@
 <template>
   <div class="navbar-wrapper">
     <!-- logo -->
+    <h1>LOGO</h1>
     <MenuItems :menuItems="menuItems" />
   </div>
 </template>
@@ -40,6 +41,11 @@ export default defineComponent({
 <style scoped lang="scss">
 .navbar-wrapper{
   height: 8vh;
-  background: aquamarine;
+  background: #5D3FDD;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 </style>

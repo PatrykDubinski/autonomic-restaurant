@@ -34,4 +34,10 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.menu-items {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+</style>

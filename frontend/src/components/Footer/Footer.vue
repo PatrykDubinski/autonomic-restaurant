@@ -17,6 +17,11 @@ export default defineComponent({
 <style scoped>
 .footer{
   height: 8vh;
-  background: aqua;
+  background: #5D3FDD;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
 }
 </style>

@@ -66,3 +66,8 @@ gem 'sidekiq-cron'
 gem 'simple_xlsx_reader'
 gem 'wicked_pdf'
 gem 'swagger-blocks'
+
+gem 'rqrcode', '~> 2.1'
+gem "rqrcode_core"
+gem 'chunky_png', '~> 1.4'
+gem 'active_storage_validations'

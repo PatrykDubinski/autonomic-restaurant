@@ -25,7 +25,7 @@
 import {defineComponent, reactive, toRefs} from "vue";
 import MainLayout from "../layouts/MainLayout.vue";
 import Modal from "@/components/Modal/Modal.vue";
-import {getEntryQRCode} from "@/api/restaurantGuestApi";
+import * as RestaurantGuestApi from "@/api/restaurantGuestApi";
 
 export default defineComponent({
   name: "Home",
@@ -40,7 +40,7 @@ export default defineComponent({
     })
 
     const showQRModal = () => {
-      getEntryQRCode()
+      RestaurantGuestApi.getEntryQRCode()
         .then((res: any) => {
           state.showModal = true
           state.qr = res.data.avatar

@@ -5,7 +5,7 @@
         <div class="home-wrapper_restaurant__image">
           <img src="../assets/images/restaurant_bg.jpg" class="img" />
         </div>
-        <h1 class="title">Wchodzę do restauracji</h1>
+        <h1 @click="showQRModal" class="title">Wchodzę do restauracji</h1>
       </div>
       <div class="home-wrapper_website">
         <div class="home-wrapper_restaurant__image">
@@ -14,18 +14,47 @@
         <h1 class="title">Wchodzę na stronę</h1>
       </div>
     </div>
+    <Modal v-if="showModal" @close="showModal = false">
+      <h1>Testowy modal</h1>
+      <img v-if="qr" :src="qr" />
+    </Modal>
   </MainLayout>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent, reactive, toRefs} from "vue";
 import MainLayout from "../layouts/MainLayout.vue";
+import Modal from "@/components/Modal/Modal.vue";
+import {getEntryQRCode} from "@/api/restaurantGuestApi";
 
 export default defineComponent({
   name: "Home",
   components: {
+    Modal,
     MainLayout,
   },
+  setup() {
+    const state = reactive({
+      showModal: false,
+      qr: null
+    })
+
+    const showQRModal = () => {
+      getEntryQRCode()
+        .then((res: any) => {
+          state.showModal = true
+          state.qr = res.data.avatar
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
+    return {
+      ...toRefs(state),
+      showQRModal
+    }
+  }
 });
 </script>
 
